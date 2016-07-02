@@ -23,12 +23,12 @@ class Menu
 
     /**
      * Menu constructor.
-     * @param Id $id
-     * @param string $name
-     * @param string $url
-     * @param string $urlFinal
-     * @param int $order
-     * @param int $count
+     * @param Id             $id
+     * @param string         $name
+     * @param string         $url
+     * @param string         $urlFinal
+     * @param int            $order
+     * @param int            $count
      * @param MenuCollection $subMenus
      */
     public function __construct(
@@ -104,6 +104,4 @@ class Menu
     {
         return $this->subMenus;
     }
-
-
 }

@@ -60,5 +60,4 @@ class Logger implements LoggerInterface
         $arguments = array_unshift($context, $message);
         \Application_Monitor_Log::proto($level, $arguments);
     }
-
 }

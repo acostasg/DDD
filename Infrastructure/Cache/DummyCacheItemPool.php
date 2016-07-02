@@ -4,7 +4,6 @@ namespace Infrastructure\Cache;
 
 use Domain\Cache\CacheItemInterface;
 use Domain\Cache\CacheItemPoolInterface;
-use Domain\Cache\InvalidArgumentException;
 
 class DummyCacheItemPool implements CacheItemPoolInterface
 {
@@ -28,9 +27,30 @@ class DummyCacheItemPool implements CacheItemPoolInterface
         return true;
     }
 
-    public function save($item, $key)
+    public function save(CacheItemInterface $item)
     {
         return true;
     }
+
+    public function getItems(array $keys = array())
+    {
+        // TODO: Implement getItems() method.
+    }
+
+    public function deleteItems(array $keys)
+    {
+        // TODO: Implement deleteItems() method.
+    }
+
+    public function saveDeferred(CacheItemInterface $item)
+    {
+        // TODO: Implement saveDeferred() method.
+    }
+
+    public function commit()
+    {
+        // TODO: Implement commit() method.
+    }
+
 
 }

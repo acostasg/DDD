@@ -18,19 +18,18 @@ class MainMenuCollection extends MenuCollection
      * @param string|null $currentMenu
      * @param string|null $currentParentMenu
      */
-    public function __construct($currentMenu=null,$currentParentMenu=null)
+    public function __construct($currentMenu=null, $currentParentMenu=null)
     {
         parent::__construct();
         $this->currentMenu = $currentMenu;
         $this->currentParentMenu = $currentParentMenu;
     }
 
-
     /**
      * Add Menu item to the collection in correct order
      * using Menu->order() attribute to sort
      *
-     * @param Menu $object
+     * @param  Menu                   $object
      * @throws DuplicateItemException
      */
     public function add(Menu $object)
@@ -65,7 +64,7 @@ class MainMenuCollection extends MenuCollection
     /**
      * Search if the object is in the collection
      *
-     * @param Menu $object
+     * @param  Menu $object
      * @return bool
      */
     private function inArray(Menu $object)
@@ -96,5 +95,4 @@ class MainMenuCollection extends MenuCollection
     {
         return $this->currentParentMenu;
     }
-
 }

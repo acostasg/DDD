@@ -8,10 +8,10 @@ use Domain\DomainShared\Objects\Id;
 class CityFactory
 {
     /**
-     * @param string $name
-     * @param string $url
-     * @param string $urlFinal
-     * @param string|null $id
+     * @param  string      $name
+     * @param  string      $url
+     * @param  string      $urlFinal
+     * @param  string|null $id
      * @return City
      * @throws \Exception
      */

@@ -17,7 +17,7 @@ class City
 
     /**
      * City constructor.
-     * @param Id $id
+     * @param Id     $id
      * @param string $name
      * @param string $url
      * @param string $urlFinal

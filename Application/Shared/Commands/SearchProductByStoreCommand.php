@@ -8,7 +8,7 @@ use Application\Shared\Responses\SearchProductByStoreResponse;
 use Domain\DomainProduct\Objects\Search\ProductByStore\ProductSearchCollection;
 use Domain\DomainProduct\Repositories\ProductSearchRepository;
 use Infrastructure\RepositoriesCassandra\CassandraBaseRepository;
-use Symfony\Component\Config\Definition\Exception\Exception;
+use \Exception as Exception;
 
 class SearchProductByStoreCommand
 {
@@ -32,11 +32,12 @@ class SearchProductByStoreCommand
     ) {
         $this->productRepository = $productRepository;
         $this->subMenuRepository = $subMenuRepository;
-x    }
+    }
 
     /**
      * @param  SearchProductByStoreRequest  $request
      * @return SearchProductByStoreResponse
+     * @throws \Exception
      */
     public function executxe(SearchProductByStoreRequest $request)
     {
@@ -45,10 +46,10 @@ x    }
             $request->attributes(), $request->currentPage(), $request->limitPage());
 
         if (!$productSearchCollection) {
-            throw new \Exception('Not product/s found');
+            throw new Exception('Not product/s found');
         }
 
-        //command to get menu
+        //command to get menu @TODO
 
         //command to get submenu
         $cmd = new GetSubMenuInternalCommand($this->subMenuRepository);

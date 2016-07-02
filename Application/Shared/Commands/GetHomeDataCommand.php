@@ -21,9 +21,8 @@ class GetHomeDataCommand
         'Madrid',
         'Valencia'
     ];
-    /** 
-     //TODO
-     @var array url => name to replace to show on the view */
+
+    /** @var array url => name to replace to show on the view */
     private $mainMenuNameItems = [
         'restaurantes' => 'Restaurantes',
         'salud-belleza' => 'Salud y Belleza',

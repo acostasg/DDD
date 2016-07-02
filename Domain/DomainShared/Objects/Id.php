@@ -18,7 +18,7 @@ class Id
         if (empty($id)) {
             $id = uniqid();
         }
-        $this->id = (string)$id;
+        $this->id = (string) $id;
     }
 
     /**

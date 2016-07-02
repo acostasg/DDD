@@ -19,7 +19,7 @@ class WebSite
 
     /**
      * WebSite constructor.
-     * @param Id $id
+     * @param Id     $id
      * @param string $code
      * @param string $locale
      * @param string $name
@@ -62,7 +62,6 @@ class WebSite
     {
         return $this->locale;
     }
-
 
     public function name()
     {

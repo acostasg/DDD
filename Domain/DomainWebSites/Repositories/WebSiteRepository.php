@@ -9,8 +9,8 @@ interface WebSiteRepository
     /**
      * Get the WebSite data Identified by code [es, pl, ...]
      *
-     * @param string $code
-     * @param bool $isHttps
+     * @param  string  $code
+     * @param  bool    $isHttps
      * @return WebSite
      */
     public function getWebSiteByCode($code, $isHttps = false);

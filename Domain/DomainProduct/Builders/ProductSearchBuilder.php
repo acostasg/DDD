@@ -14,9 +14,9 @@ class ProductSearchBuilder
 
     /**
      * @param $totalSearchProducts
-     * @param array $listProducts
-     * @param array $listAttributeSearchCount
-     * @param array $listPlace
+     * @param  array                   $listProducts
+     * @param  array                   $listAttributeSearchCount
+     * @param  array                   $listPlace
      * @return ProductSearchCollection
      * @throws \Exception
      */
@@ -41,18 +41,16 @@ class ProductSearchBuilder
             $totalSearchProducts
         );
 
-
         foreach ($listProducts as $product) {
-
             $img = ImageFactory::buildImageSearch(
                 $product->img,
                 $product->shortTitle
             );
 
             $url = null;
-            if(!empty($product->locations) && is_array($product->locations)){
-                foreach($product->locations as $location){
-                    if ( isset($listPlace[$location['id']]) ){
+            if (!empty($product->locations) && is_array($product->locations)) {
+                foreach ($product->locations as $location) {
+                    if (isset($listPlace[$location['id']])) {
                         //TODO url absolute
                         $url = 'partners/'.$listPlace[$location['id']];
                         break;
@@ -65,7 +63,7 @@ class ProductSearchBuilder
                 $url
             );
 
-           $listPrice = $product->prices;
+            $listPrice = $product->prices;
 
             $item = ProductFactory::buildProductSearch(
                 $product->title,
@@ -86,5 +84,4 @@ class ProductSearchBuilder
 
         return $collection;
     }
-
 }

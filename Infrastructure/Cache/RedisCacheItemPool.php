@@ -4,7 +4,6 @@ namespace Infrastructure\Cache;
 
 use Domain\Cache\CacheItemInterface;
 use Domain\Cache\CacheItemPoolInterface;
-use Domain\Cache\InvalidArgumentException;
 
 class RedisCacheItemPool implements CacheItemPoolInterface
 {
@@ -12,12 +11,11 @@ class RedisCacheItemPool implements CacheItemPoolInterface
 
     private $defaultTtl = false;
 
-    function __construct($ttl)
+    public function __construct($ttl)
     {
         $this->redis = new \Application_Cache_Backend_Redis();
         $this->defaultTtl = $ttl;
     }
-
 
     public function getItem($key)
     {
@@ -39,9 +37,30 @@ class RedisCacheItemPool implements CacheItemPoolInterface
         return $this->redis->remove($key);
     }
 
-    public function save($item, $key)
+    public function save(CacheItemInterface $item)
     {
-        return $this->redis->save($item, $key, array(), $this->defaultTtl);
+        return $this->redis->save($item->get(), $item->getKey(), array(), $this->defaultTtl);
     }
+
+    public function getItems(array $keys = array())
+    {
+        // TODO: Implement getItems() method.
+    }
+
+    public function deleteItems(array $keys)
+    {
+        // TODO: Implement deleteItems() method.
+    }
+
+    public function saveDeferred(CacheItemInterface $item)
+    {
+        // TODO: Implement saveDeferred() method.
+    }
+
+    public function commit()
+    {
+        // TODO: Implement commit() method.
+    }
+
 
 }

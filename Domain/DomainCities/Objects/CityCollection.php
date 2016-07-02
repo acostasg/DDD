@@ -27,8 +27,7 @@ class CityCollection implements \Iterator
     {
         $tmpCollectionBefore = $this->collection;
         $tmpCollectionAfter = [];
-        foreach ($this->collection as $key => $item)
-        {
+        foreach ($this->collection as $key => $item) {
             if (0 < strcmp($item->name(), $object->name())) {
                 if (0 < $key) {
                     $tmpCollectionBefore = array_slice(
@@ -53,7 +52,7 @@ class CityCollection implements \Iterator
     /**
      * Return the current element
      * @link http://php.net/manual/en/iterator.current.php
-     * @return mixed Can return any type.
+     * @return mixed      Can return any type.
      * @throws \Exception
      * @since 5.0.0
      */
@@ -93,7 +92,7 @@ class CityCollection implements \Iterator
      * Checks if current position is valid
      * @link http://php.net/manual/en/iterator.valid.php
      * @return boolean The return value will be casted to boolean and then evaluated.
-     * Returns true on success or false on failure.
+     *                 Returns true on success or false on failure.
      * @since 5.0.0
      */
     public function valid()

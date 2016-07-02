@@ -10,7 +10,7 @@ interface CityRepository
      * Get all cities associate to the websiteId requested.
      *
      * @param $websiteId
-     * @param bool $isHttps
+     * @param  bool                $isHttps
      * @return CityCollection|null
      */
     public function getAllCitiesFromWebSite($websiteId, $isHttps = false);

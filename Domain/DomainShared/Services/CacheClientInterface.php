@@ -19,7 +19,7 @@ interface CacheClientInterface
      *
      * @param string $key
      * @param string $value
-     * @param int    $ttl => ttl in seconds
+     * @param int    $ttl   => ttl in seconds
      *
      * @return mixed
      */

@@ -8,11 +8,11 @@ use Domain\DomainWebSites\Objects\WebSite;
 class WebSiteFactory
 {
     /**
-     * @param string $code
-     * @param string $locale
-     * @param string $name
-     * @param string $domain
-     * @param string|null $id
+     * @param  string      $code
+     * @param  string      $locale
+     * @param  string      $name
+     * @param  string      $domain
+     * @param  string|null $id
      * @return WebSite
      * @throws \Exception
      */

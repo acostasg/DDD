@@ -2,8 +2,6 @@
 
 namespace Domain\DomainProduct\Objects\Search\ProductByStore;
 
-use Domain\Place\Search\Service\PlacesSearch;
-
 class ProductSearch
 {
     /**
@@ -61,7 +59,7 @@ class ProductSearch
     /** @var  int */
     private $discount;
 
-    /** @var PlacesSearch */
+    /** @var PlaceSearch */
     private $place;
 
     /** @var string */
@@ -73,7 +71,7 @@ class ProductSearch
     /** @var  array */
     private $locationSummary;
 
-    /** @var  ProductReview */
+    /** @var  ProductSearchReview */
     private $review;
 
     /** @var  string */
@@ -180,5 +178,4 @@ class ProductSearch
     {
         return $this->hidePrice;
     }
-
 }

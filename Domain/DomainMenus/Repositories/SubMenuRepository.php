@@ -10,10 +10,9 @@ interface SubMenuRepository
     /**
      * Get the Sub Menu by ID attribute Parent
      *
-     * @param string $idAttr
-     * @param AttributeSearchCountCollection $listCount
+     * @param  string                         $idAttr
+     * @param  AttributeSearchCountCollection $listCount
      * @return MainMenuCollection|null
      */
-    public function getSubMenuByAttrParent($idAttr,AttributeSearchCountCollection $listCount);
-
+    public function getSubMenuByAttrParent($idAttr, AttributeSearchCountCollection $listCount);
 }

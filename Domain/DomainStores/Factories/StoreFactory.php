@@ -8,8 +8,8 @@ use Domain\DomainStores\Objects\Store;
 class StoreFactory
 {
     /**
-     * @param string $name
-     * @param string|null $id
+     * @param  string      $name
+     * @param  string|null $id
      * @return Store
      * @throws \Exception
      */

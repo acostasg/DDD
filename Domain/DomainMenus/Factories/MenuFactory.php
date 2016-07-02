@@ -9,13 +9,13 @@ use Domain\DomainShared\Objects\Id;
 class MenuFactory
 {
     /**
-     * @param string $name
-     * @param string $url
-     * @param string $urlFinal
-     * @param int $order
-     * @param string|null $id
-     * @param int $count
-     * @param MenuCollection $subMenus
+     * @param  string         $name
+     * @param  string         $url
+     * @param  string         $urlFinal
+     * @param  int            $order
+     * @param  string|null    $id
+     * @param  int            $count
+     * @param  MenuCollection $subMenus
      * @return Menu
      * @throws \Exception
      */
