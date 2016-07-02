@@ -22,10 +22,10 @@ class Application_Profiler
 
     public static function end()
     {
-        if (self::_profiling == 'xhprof') {
+        if (self::$_profiling == 'xhprof') {
             self::$_profiling = false;
 
-            $profile = xhprof_disable();
+            self::$_profiling = xhprof_disable();
 
             // TODO handle $profile
         }

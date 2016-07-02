@@ -9,6 +9,7 @@ class Application extends Zend_Application
 
     private static $_registry;
     private static $_container;
+    const INVALID_PARAM_EXCEPTION = 000010001;
 
     /**
      * Constructor
@@ -17,9 +18,8 @@ class Application extends Zend_Application
      * settings, and bootstrap class.
      *
      * @param  string|array|Zend_Config $options String path to configuration file,
-     *  or array/Zend_Config of configuration options
-     * @throws Zend_Application_Exception When invalid options are provided
-     * @return void
+     *                                           or array/Zend_Config of configuration options
+     * @throws Exception                When invalid options are provided
      */
     public function __construct($options = null)
     {
@@ -56,6 +56,7 @@ class Application extends Zend_Application
         if (self::$_catchErrors) {
             restore_error_handler();
         }
+
         return $this;
     }
 
@@ -127,28 +128,31 @@ class Application extends Zend_Application
     /**
      * Retrieve model object singleton
      *
-     * @param   string $modelClass
-     * @param   array $arguments
-     * @return  mixed
+     * @param  string    $class
+     * @return mixed
+     * @throws Exception
+     * @internal param string $modelClass
      */
     public static function getSingleton($class = '')
     {
         $registryKey = '_singleton/' . $class;
         if (!self::_registry($registryKey)) {
             if (!class_exists($class)) {
-                throw new Application_Model_Exception(
+                throw new \Exception(
                     'PHP says that this class not exists.',
-                    Application_Model_Exception::VALIDATION_INVALID_PARAM);
+                    self::INVALID_PARAM_EXCEPTION
+                );
             }
             self::register($registryKey, new $class());
         }
+
         return self::_registry($registryKey);
     }
 
     /**
      * Retrieve a value from registry by a key
      *
-     * @param string $key
+     * @param  string $key
      * @return mixed
      */
     private static function _registry($key)
@@ -156,16 +160,17 @@ class Application extends Zend_Application
         if (isset(self::$_registry[$key])) {
             return self::$_registry[$key];
         }
+
         return null;
     }
 
     /**
      * Register a new variable
      *
-     * @param string $key
-     * @param mixed $value
-     * @param bool $graceful
-     * @throws Application_Model_Exception
+     * @param  string     $key
+     * @param  mixed      $value
+     * @param  bool       $graceful
+     * @throws \Exception
      */
     public static function register($key, $value, $graceful = false)
     {
@@ -173,7 +178,7 @@ class Application extends Zend_Application
             if ($graceful) {
                 return;
             }
-            throw new Application_Model_Exception(__CLASS__ . ' registry key "' . $key . '" already exists');
+            throw new \Exception(__CLASS__ . ' registry key "' . $key . '" already exists');
         }
         self::$_registry[$key] = $value;
     }
@@ -206,13 +211,12 @@ class Application extends Zend_Application
             );
             $loader->load('services.yml');
         }
+
         return self::$_container;
     }
 
     /**
      * Unregister a variable from register by key
-     *
-     * @param string $key
      */
     public static function unregisterAll()
     {

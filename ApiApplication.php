@@ -28,5 +28,4 @@ class Api_Application extends Application
         );
         echo serialize($response);
     }
-
 }
