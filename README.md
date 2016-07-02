@@ -1,5 +1,5 @@
-Example in ZendFrameWork ddd (Hexagonal architecture in php)
-============================================================
+Example E-Commerce application using DDD (Hexagonal architecture in php)
+========================================================================
 
 This library will help you with typical DDD scenarios, for now:
 * Application Services Interface
