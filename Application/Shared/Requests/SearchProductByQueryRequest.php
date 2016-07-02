@@ -1,15 +1,9 @@
 <?php
 
-namespace Application\ApplicationShared\Requests;
+namespace Application\Shared\Requests;
 
 use \Exception as Exception;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 26/01/16
- * Time: 15:59
- */
 class SearchProductByQueryRequest
 {
     /** @var  string  */

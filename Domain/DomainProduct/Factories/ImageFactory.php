@@ -5,12 +5,6 @@ namespace Domain\DomainProduct\Factories;
 use Domain\DomainProduct\Objects\Search\ProductByStore\ImageSearch;
 use Domain\DomainShared\Objects\Id;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 26/01/16
- * Time: 15:30
- */
 class ImageFactory
 {
     /**
@@ -25,7 +19,7 @@ class ImageFactory
         $id = null
     ) {
         $id = new Id($id);
+
         return new ImageSearch($id, $url, $alt);
     }
-
 }

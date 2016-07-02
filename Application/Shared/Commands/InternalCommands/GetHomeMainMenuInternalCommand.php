@@ -1,10 +1,10 @@
 <?php
 
-namespace Application\ApplicationShared\Commands\InternalCommands;
+namespace Application\Shared\Commands\InternalCommands;
 
 use Domain\DomainMenus\Repositories\MenuRepository;
 
-class GetMainMenuInternalCommand
+class GetHomeMainMenuInternalCommand
 {
     /** @var MenuRepository  */
     private $menuRepository;
@@ -20,17 +20,11 @@ class GetMainMenuInternalCommand
 
     /**
      * @param string $domain
-     * @param string|null $storeUrl
      * @return \Domain\DomainMenus\Objects\MainMenuCollection|null
      */
     public function execute(
-        $domain,
-        $storeUrl = null
+        $domain
     ) {
-        if (!empty($store)) {
-            return $this->menuRepository->getMainMenuByStore($domain, $storeUrl);
-        } else {
-            return $this->menuRepository->getMainMenu($domain);
-        }
+        return $this->menuRepository->getMainMenu($domain);
     }
 }

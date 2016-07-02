@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 1/02/16
- * Time: 17:06
- */
+
 
 namespace Infrastructure\RepositoriesElasticSearch;
 
@@ -22,9 +17,9 @@ class ElasticSearchBaseRepository
     private static $client = null;
 
     /**
-     * @param array $servers
-     * @param string $indexProducts
-     * @param string $indexPlaces
+     * @param  array      $servers
+     * @param  string     $indexProducts
+     * @param  string     $indexPlaces
      * @throws \Exception
      */
     public function __construct($servers, $indexProducts, $indexPlaces)
@@ -33,7 +28,7 @@ class ElasticSearchBaseRepository
             throw new \Exception('I need a server for connect to elasticsearch');
         } elseif (empty($indexProducts)) {
             throw new \Exception('I need a index name product for connect to elasticsearch');
-        }elseif(empty($indexPlaces)) {
+        } elseif (empty($indexPlaces)) {
             throw new \Exception('I need a index name place for connect to elasticsearch');
         }
 
@@ -47,12 +42,13 @@ class ElasticSearchBaseRepository
         if (!self::$client) {
             self::$client = new Client($this->servers);
         }
+
         return self::$client;
     }
 
     /**
-     * @param Query $queryElastica
-     * @param string $websiteCode
+     * @param  Query      $queryElastica
+     * @param  string     $websiteCode
      * @return ResultSet
      * @throws \Exception
      */
@@ -62,7 +58,7 @@ class ElasticSearchBaseRepository
     }
 
     /**
-     * @param Query $queryElastica
+     * @param  Query      $queryElastica
      * @return ResultSet
      * @throws \Exception
      */

@@ -1,17 +1,12 @@
 <?php
 
-namespace Application\ApplicationShared\Responses;
+namespace Application\Shared\Responses;
 
 use Domain\DomainMenus\Objects\MainMenuCollection;
 use Domain\DomainProduct\Objects\Search\ProductByStore\ProductSearchCollection;
 use Domain\DomainProduct\Objects\AttributeCollection;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 26/01/16
- * Time: 16:09
- */
+
 class SearchProductByStoreResponse
 {
     /** @var productSearchCollection */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\ApplicationShared\Responses;
+namespace Application\Shared\Responses;
 
 use Domain\DomainCities\Objects\CityCollection;
 use Domain\DomainMenus\Objects\MainMenuCollection;

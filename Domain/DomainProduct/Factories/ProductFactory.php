@@ -5,12 +5,6 @@ namespace Domain\DomainProduct\Factories;
 use Domain\DomainProduct\Objects\Search\ProductByStore\ProductSearch;
 use Domain\DomainShared\Objects\Id;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 26/01/16
- * Time: 15:30
- */
 class ProductFactory
 {
     /**
@@ -43,6 +37,7 @@ class ProductFactory
         $id = null
     ) {
         $id = new Id($id);
+
         return new ProductSearch(
             $id,
             $title,
@@ -58,5 +53,4 @@ class ProductFactory
             $hidePrice
         );
     }
-
 }

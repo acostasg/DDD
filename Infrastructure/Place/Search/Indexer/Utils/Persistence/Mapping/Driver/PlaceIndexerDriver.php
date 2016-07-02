@@ -3,14 +3,7 @@
 namespace Infrastructure\Place\Search\Indexer\Utils\Persistence\Mapping\Driver;
 
 use Elastica\Response;
-use Infrastructure\Place\Search\Indexer\Utils\Persistence\Mapping\Driver\PlaceIndexerDriverInterface;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 24/12/15
- * Time: 10:54
- */
 class PlaceIndexerDriver implements PlaceIndexerDriverInterface
 {
 
@@ -40,16 +33,15 @@ class PlaceIndexerDriver implements PlaceIndexerDriverInterface
      *
      * It's possible to make any REST query directly over this method
      *
-     * @param  string $path Path to call
-     * @param  string $method Rest method to use (GET, POST, DELETE, PUT)
-     * @param  array $data OPTIONAL Arguments as array
-     * @param  array $query OPTIONAL Query params
+     * @param  string                                   $path   Path to call
+     * @param  string                                   $method Rest method to use (GET, POST, DELETE, PUT)
+     * @param  array                                    $data   OPTIONAL Arguments as array
+     * @param  array                                    $query  OPTIONAL Query params
      * @throws Exception\ConnectionException|\Exception
-     * @return sring Response
+     * @return sring                                    Response
      */
     public static function request($path, $method = \Zend_Http_Client::GET, $data = array(), array $query = array())
     {
-
         if (!self::$_client) {
             self::get();
         }
@@ -74,7 +66,7 @@ class PlaceIndexerDriver implements PlaceIndexerDriverInterface
     /**
      * Optimizes all search indices
      *
-     * @param  array $args OPTIONAL Optional arguments
+     * @param  array              $args OPTIONAL Optional arguments
      * @return \Elastica\Response Response object
      * @link http://www.elasticsearch.org/guide/reference/api/admin-indices-optimize.html
      */
@@ -86,11 +78,11 @@ class PlaceIndexerDriver implements PlaceIndexerDriverInterface
     /**
      * Deletes documents with the given ids, index, type from the index
      *
-     * @param  array $ids Document ids
-     * @param  string|\Elastica\Index $index Index name
-     * @param  string|\Elastica\Type $type Type of documents
+     * @param  array                                $ids   Document ids
+     * @param  string|\Elastica\Index               $index Index name
+     * @param  string|\Elastica\Type                $type  Type of documents
      * @throws \Elastica\Exception\InvalidException
-     * @return \Elastica\Bulk\ResponseSet                   Response object
+     * @return \Elastica\Bulk\ResponseSet           Response object
      */
     public static function deleteIds(array $ids, $index, $type)
     {
@@ -107,5 +99,4 @@ class PlaceIndexerDriver implements PlaceIndexerDriverInterface
     {
         self::$_client = $object;
     }
-
 }

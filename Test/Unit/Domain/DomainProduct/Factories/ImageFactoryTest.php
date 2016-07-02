@@ -2,13 +2,6 @@
 
 namespace Test\Unit\Domain\DomainProduct\Factories;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 28/01/16
- * Time: 12:22
- */
-
 use Domain\DomainProduct\Factories\ImageFactory;
 use \PHPUnit_Framework_TestCase as PHPUnit_Framework_TestCase;
 
@@ -49,7 +42,5 @@ class ImageFactoryTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($imageObject->alt(), $this->alt);
 
         $this->assertEquals($imageObject->url(), $this->url);
-
     }
-
 }

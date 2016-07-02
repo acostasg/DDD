@@ -1,21 +1,15 @@
 <?php
 
-namespace Application\ApplicationShared\Commands;
+namespace Application\Shared\Commands;
 
-use Application\ApplicationShared\Commands\InternalCommands\GetSubMenuInternalCommand;
-use Application\ApplicationShared\Requests\SearchProductByStoreRequest;
-use Application\ApplicationShared\Responses\SearchProductByStoreResponse;
+use Application\Shared\Commands\InternalCommands\GetSubMenuInternalCommand;
+use Application\Shared\Requests\SearchProductByStoreRequest;
+use Application\Shared\Responses\SearchProductByStoreResponse;
 use Domain\DomainProduct\Objects\Search\ProductByStore\ProductSearchCollection;
 use Domain\DomainProduct\Repositories\ProductSearchRepository;
 use Infrastructure\RepositoriesCassandra\CassandraBaseRepository;
 use Symfony\Component\Config\Definition\Exception\Exception;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 26/01/16
- * Time: 15:51
- */
 class SearchProductByStoreCommand
 {
     /**

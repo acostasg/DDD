@@ -4,12 +4,6 @@ namespace Domain\DomainProduct\Repositories;
 
 use Domain\DomainProduct\Objects\Search\ProductByStore\ProductSearchCollection;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 26/01/16
- * Time: 16:04
- */
 interface ProductSearchRepository
 {
     /**

@@ -5,17 +5,10 @@ namespace Infrastructure\RepositoriesElasticSearch\SearchProduct;
 use Domain\DomainProduct\Builders\ProductSearchBuilder;
 use Domain\DomainProduct\Repositories\ProductSearchRepository;
 use Domain\DomainProduct\Objects\Search\ProductByStore\ProductSearchCollection;
-
 use \Elastica\Query as Query;
 use \Elastica\Aggregation\Nested as AggregationNested;
 use \Elastica\Aggregation\Terms as AggregationTerms;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 1/02/16
- * Time: 16:39
- */
 class ElasticSearchProductSearchRepository extends ElasticSearchProductBaseRepository implements ProductSearchRepository
 {
 
@@ -84,13 +77,12 @@ class ElasticSearchProductSearchRepository extends ElasticSearchProductBaseRepos
             $listCount[self::COUNT_ATTRIBUTES][self::BUCKETS], $listPlaces);
     }
 
-
     private function getPlaces($listIds)
     {
         $query = new Query();
         $bool = new Query\Bool();
         if (!empty($listIds)) {
-            foreach ($listIds as $id ) {
+            foreach ($listIds as $id) {
                 $newTerm = new Query\Term();
                 $newTerm->setTerm(self::REL_ADDRESS, $id);
                 $bool->addShould($newTerm);
@@ -103,11 +95,11 @@ class ElasticSearchProductSearchRepository extends ElasticSearchProductBaseRepos
             $result->getResults(),
             function ($result, $object) {
                 isset($object->relAddress) && $result[$object->relAddress] = $object->url;
+
                 return $result;
             },
             array()
         );
-
     }
 
     /**
@@ -123,6 +115,7 @@ class ElasticSearchProductSearchRepository extends ElasticSearchProductBaseRepos
                 $listIds = array_merge($listIds, $listIdsProduct);
             }
         }
+
         return $listIds;
     }
 
@@ -138,11 +131,10 @@ class ElasticSearchProductSearchRepository extends ElasticSearchProductBaseRepos
             $data,
             function ($result, $object) use ($key) {
                 isset($object[$key]) && $result[] = $object[$key];
+
                 return $result;
             },
             array()
         );
     }
-
-
 }

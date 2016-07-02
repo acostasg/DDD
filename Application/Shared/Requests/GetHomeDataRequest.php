@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\ApplicationShared\Requests;
+namespace Application\Shared\Requests;
 
 class GetHomeDataRequest
 {

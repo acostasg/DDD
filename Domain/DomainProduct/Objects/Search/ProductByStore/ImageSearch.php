@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 28/01/16
- * Time: 10:46
- */
 
 namespace Domain\DomainProduct\Objects\Search\ProductByStore;
-
 
 class ImageSearch
 {
@@ -18,7 +11,7 @@ class ImageSearch
      * @param $url
      * @param $alt
      */
-    public function __construct( $id, $url , $alt )
+    public function __construct($id, $url, $alt)
     {
         $this->id = $id;
         $this->url = $url;
@@ -57,6 +50,4 @@ class ImageSearch
 
     /** @var  string */
     private $alt;
-
-
 }

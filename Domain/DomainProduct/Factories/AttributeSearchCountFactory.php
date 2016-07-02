@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 2/02/16
- * Time: 17:30
- */
 
 namespace Domain\DomainProduct\Factories;
 
@@ -28,5 +22,4 @@ class AttributeSearchCountFactory
             $count
         );
     }
-
 }

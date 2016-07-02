@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 26/01/16
- * Time: 18:20
- */
 
 namespace Domain\DomainProduct\Objects\Search\ProductByStore;
-
 
 use Domain\DomainShared\Objects\Id;
 
@@ -21,7 +14,7 @@ class AttributeSearchCount
 
     /**
      * AttributeCount constructor.
-     * @param Id $id
+     * @param Id  $id
      * @param int $count
      */
     public function __construct(Id $id, $count)
@@ -30,12 +23,13 @@ class AttributeSearchCount
         $this->count = $count;
     }
 
-    public function id(){
+    public function id()
+    {
         return $this->id;
     }
 
-    public function count(){
+    public function count()
+    {
         return $this->count;
     }
-
 }

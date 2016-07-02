@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\ApplicationShared\Commands\InternalCommands;
+namespace Application\Shared\Commands\InternalCommands;
 
 use Domain\DomainMenus\Repositories\SubMenuRepository;
 use Domain\DomainProduct\Objects\Search\ProductByStore\AttributeSearchCountCollection;

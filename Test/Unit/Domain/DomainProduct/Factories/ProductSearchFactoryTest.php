@@ -2,19 +2,12 @@
 
 namespace Test\Unit\Domain\DomainProduct\Factories;
 
-/**
- * Created by PhpStorm.
- * User: albert
- * Date: 28/01/16
- * Time: 12:22
- */
-
 use Domain\DomainProduct\Factories\ProductFactory;
 use Domain\DomainProduct\Objects\Search\ProductByStore\PlaceSearch;
 use Domain\DomainProduct\Objects\Search\ProductByStore\ProductSearchReview;
 use \PHPUnit_Framework_TestCase as PHPUnit_Framework_TestCase;
 
-class ProductFactoryTest extends PHPUnit_Framework_TestCase
+class ProductSearchFactoryTest extends PHPUnit_Framework_TestCase
 {
 
     /** @var string */
@@ -65,7 +58,6 @@ class ProductFactoryTest extends PHPUnit_Framework_TestCase
     {
         $this->place = new PlaceSearch($this->noTest, $this->noTest, $this->noTest);
         $this->review = new ProductSearchReview($this->noTest, $this->noTest, $this->noTest, $this->noTest);
-
     }
 
     /**
@@ -113,7 +105,5 @@ class ProductFactoryTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($placeObject->url(), $this->url);
 
         $this->assertEquals($placeObject->hidePrice(), $this->hidePrice);
-
     }
-
 }

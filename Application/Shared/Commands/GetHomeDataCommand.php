@@ -1,10 +1,10 @@
 <?php
 
-namespace Application\ApplicationShared\Commands;
+namespace Application\Shared\Commands;
 
-use Application\ApplicationShared\Commands\InternalCommands\GetMainMenuInternalCommand;
-use Application\ApplicationShared\Requests\GetHomeDataRequest;
-use Application\ApplicationShared\Responses\GetHomeDataResponse;
+use Application\Shared\Commands\InternalCommands\GetMainMenuInternalCommand;
+use Application\Shared\Requests\GetHomeDataRequest;
+use Application\Shared\Responses\GetHomeDataResponse;
 use Domain\DomainCities\Objects\CityCollection;
 use Domain\DomainCities\Repositories\CityRepository;
 use Domain\DomainMenus\Factories\MenuFactory;
